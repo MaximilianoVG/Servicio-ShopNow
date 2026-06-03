@@ -1,0 +1,42 @@
+services:
+
+  clientes:
+    build: ./clientes_service
+    ports:
+      - "8001:8000"
+    env_file:
+      - ./clientes_service/.env
+
+  productos:
+    build: ./productos_service
+    ports:
+      - "8002:8000"
+    env_file:
+      - ./productos_service/.env
+
+  inventario:
+    build: ./inventario_service
+    ports:
+      - "8003:8000"
+    env_file:
+      - ./inventario_service/.env
+
+  pedidos:
+    build: ./pedidos_service
+    ports:
+      - "8004:8000"
+    env_file:
+      - ./pedidos_service/.env
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+
+  worker_pedidos:
+    build: ./pedidos_service
+    command: python worker_pedidos.py
+    depends_on:
+      - rabbitmq
