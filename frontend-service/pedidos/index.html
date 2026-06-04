@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pedidos | ShopNow</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+  <main class="shell">
+    <header class="hero-card">
+      <p class="eyebrow">Módulo</p>
+      <h1>Pedidos</h1>
+      <p class="lead">Crear pedidos y consultar el estado de la cola.</p>
+      <div class="row"><a class="btn" href="../index.html">← Volver</a></div>
+    </header>
+
+    <section class="panel">
+      <h2>Autenticación</h2>
+      <div class="form-grid">
+        <label>Usuario<input id="pedUser" value="admin" /></label>
+        <label>Contraseña<input id="pedPass" type="password" value="1234" /></label>
+        <label style="justify-content:end"><button id="loginBtn">Obtener token</button></label>
+      </div>
+      <p id="loginStatus" class="status">Token local guardado en el navegador.</p>
+    </section>
+
+    <section class="panel">
+      <h2>Crear pedido</h2>
+      <div class="form-grid">
+        <label>ID cliente<input id="pedidoCliente" type="number" placeholder="1" /></label>
+        <label>ID producto<input id="pedidoProducto" type="number" placeholder="1" /></label>
+        <label>Cantidad<input id="pedidoCantidad" type="number" placeholder="2" /></label>
+        <label>Descuento %<input id="pedidoDescuento" type="number" step="0.01" placeholder="0" /></label>
+      </div>
+      <div class="row" style="margin-top:12px;">
+        <button id="crearPedidoBtn">Crear pedido</button>
+      </div>
+      <p id="pedidoStatus" class="status">Listo para usar.</p>
+    </section>
+
+    <section class="panel">
+      <h2>Listado</h2>
+      <button id="cargarPedidosBtn">Recargar</button>
+      <div style="overflow:auto; margin-top:12px;">
+        <table id="tablaPedidos">
+          <thead><tr><th>ID</th><th>Cliente</th><th>Producto</th><th>Cantidad</th><th>Estado</th><th>Total</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/pedidos.js"></script>
+</body>
+</html>

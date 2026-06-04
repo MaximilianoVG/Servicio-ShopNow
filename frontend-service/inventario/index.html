@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inventario | ShopNow</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+  <main class="shell">
+    <header class="hero-card">
+      <p class="eyebrow">Módulo</p>
+      <h1>Inventario</h1>
+      <p class="lead">Consulta stock y ajusta inventario con acciones rápidas.</p>
+      <div class="row"><a class="btn" href="../index.html">← Volver</a></div>
+    </header>
+
+    <section class="panel">
+      <h2>Autenticación</h2>
+      <div class="form-grid">
+        <label>Usuario<input id="invUser" value="admin" /></label>
+        <label>Contraseña<input id="invPass" type="password" value="1234" /></label>
+        <label style="justify-content:end"><button id="loginBtn">Obtener token</button></label>
+      </div>
+      <p id="loginStatus" class="status">Token local guardado en el navegador.</p>
+    </section>
+
+    <section class="panel">
+      <h2>Ajuste de inventario</h2>
+      <div class="form-grid">
+        <label>ID producto<input id="inventarioId" type="number" placeholder="1" /></label>
+        <label>Cantidad<input id="inventarioCantidad" type="number" placeholder="5" /></label>
+      </div>
+      <div class="row" style="margin-top:12px;">
+        <button id="actualizarInventarioBtn">Actualizar stock</button>
+        <button id="descontarInventarioBtn" class="secondary">Descontar stock</button>
+      </div>
+      <p id="inventarioStatus" class="status">Listo para usar.</p>
+    </section>
+
+    <section class="panel">
+      <h2>Vista de inventario</h2>
+      <button id="cargarInventarioBtn">Recargar</button>
+      <div style="overflow:auto; margin-top:12px;">
+        <table id="tablaInventario">
+          <thead><tr><th>ID producto</th><th>Cantidad</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/inventario.js"></script>
+</body>
+</html>

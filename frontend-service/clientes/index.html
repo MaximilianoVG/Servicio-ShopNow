@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clientes | ShopNow</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+  <main class="shell">
+    <header class="hero-card">
+      <p class="eyebrow">Módulo</p>
+      <h1>Clientes</h1>
+      <p class="lead">Login rápido, listado y CRUD para clientes.</p>
+      <div class="row">
+        <a class="btn" href="../index.html">← Volver</a>
+      </div>
+    </header>
+
+    <section class="panel">
+      <h2>Autenticación</h2>
+      <div class="form-grid">
+        <label>Usuario<input id="clientUser" value="admin" /></label>
+        <label>Contraseña<input id="clientPass" type="password" value="1234" /></label>
+        <label style="justify-content:end"> <button id="loginBtn">Obtener token</button></label>
+      </div>
+      <p id="loginStatus" class="status">Token local guardado en el navegador.</p>
+    </section>
+
+    <section class="panel">
+      <h2>Crear / actualizar cliente</h2>
+      <div class="form-grid">
+        <label>ID<input id="clienteId" type="number" placeholder="ID (solo para actualizar)" /></label>
+        <label>Nombre<input id="clienteNombre" placeholder="Juan Escutia" /></label>
+        <label>Correo<input id="clienteCorreo" placeholder="juan@email.com" /></label>
+        <label>Teléfono<input id="clienteTelefono" placeholder="4421234567" /></label>
+        <label>Dirección<input id="clienteDireccion" placeholder="Querétaro" /></label>
+        <label>Activo<select id="clienteActivo"><option value="true">Sí</option><option value="false">No</option></select></label>
+      </div>
+      <div class="row" style="margin-top:12px;">
+        <button id="crearClienteBtn">Crear</button>
+        <button id="actualizarClienteBtn" class="secondary">Actualizar</button>
+        <button id="eliminarClienteBtn" class="danger">Eliminar</button>
+      </div>
+      <p id="clienteStatus" class="status">Listo para usar.</p>
+    </section>
+
+    <section class="panel">
+      <h2>Listado</h2>
+      <button id="cargarClientesBtn">Recargar</button>
+      <div style="overflow:auto; margin-top:12px;">
+        <table id="tablaClientes">
+          <thead>
+            <tr><th>ID</th><th>Nombre</th><th>Correo</th><th>Teléfono</th><th>Dirección</th><th>Activo</th></tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/clientes.js"></script>
+</body>
+</html>
